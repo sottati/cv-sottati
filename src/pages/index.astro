@@ -5,14 +5,57 @@ import Layout from "@/layouts/Layout.astro";
 
 import carlus01 from "@/assets/carlus/carlus-1.png";
 import carlus02 from "@/assets/carlus/carlus-2.png";
+
+import filosofia01 from "@/assets/filosofia/filosofia-1.png";
+import filosofia02 from "@/assets/filosofia/filosofia-2.png";
+import filosofia03 from "@/assets/filosofia/filosofia-3.png";
+
+import dither01 from "@/assets/ditherlabs/ditherlabs-1.png";
+import dither02 from "@/assets/ditherlabs/ditherlabs-2.png";
+import dither03 from "@/assets/ditherlabs/ditherlabs-3.png";
+
+import logistica01 from "@/assets/logistica/logistica-1.png";
+import logistica02 from "@/assets/logistica/logistica-2.png";
+import logistica03 from "@/assets/logistica/logistica-3.png";
+
 import ImagesGallery from "@/components/images-gallery";
+
+const headerLinks: { href: string; label: string }[] = [
+  {
+    href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/",
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/sottati",
+    label: "GitHub",
+  },
+  {
+    href: "mailto:simooonottati@gmail.com",
+    label: "Gmail",
+  },
+];
 
 const carlusImages = [
   { src: carlus01, alt: "carlus-1" },
   { src: carlus02, alt: "carlus-2" },
-  { src: carlus01, alt: "carlus-1" },
-  { src: carlus01, alt: "carlus-1" },
-  { src: carlus01, alt: "carlus-1" },
+];
+
+const filosofiaImages = [
+  { src: filosofia01, alt: "filosofia-1" },
+  { src: filosofia02, alt: "filosofia-2" },
+  { src: filosofia03, alt: "filosofia-3" },
+];
+
+const ditherImages = [
+  { src: dither01, alt: "dither-1" },
+  { src: dither02, alt: "dither-2" },
+  { src: dither03, alt: "dither-3" },
+];
+
+const logisticaImages = [
+  { src: logistica01, alt: "logistica-1" },
+  { src: logistica02, alt: "logistica-2" },
+  { src: logistica03, alt: "logistica-3" },
 ];
 ---
 
@@ -21,45 +64,28 @@ const carlusImages = [
     class="flex flex-col items-center justify-center max-w-screen-md mx-auto p-8"
   >
     <header class="w-full flex flex-col gap-4 justify-start">
-      <div class="flex flex-row gap-2 items-center">
+      <div class="flex flex-col md:flex-row gap-2 items-start md:items-center">
         <h1 class="text-3xl font-serif">Simon Ottati</h1>
-        <ul class="font-mono text-sm text-muted-foreground flex flex-row">
-          <li>
-            <Button
-              variant="link"
-              size="sm"
-              className="text-muted-foreground cursor-pointer"
-            >
-              <a
-                href="https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/"
-                target="_blank"
-              >
-                LinkedIn
-              </a>
-            </Button>
-          </li>
-          <li>
-            <Button
-              variant="link"
-              size="sm"
-              className="text-muted-foreground cursor-pointer"
-            >
-              <a href="https://github.com/sottati" target="_blank"> GitHub </a>
-            </Button>
-          </li>
-          <li>
-            <Button
-              variant="link"
-              size="sm"
-              className="text-muted-foreground cursor-pointer"
-            >
-              <a href="mailto:simooonottati@gmail.com"> Gmail </a>
-            </Button>
-          </li>
+        <ul class="font-mono text-sm text-muted-foreground flex flex-row gap-2">
+          {
+            headerLinks.map((link, index) => (
+              <li>
+                <Button
+                  variant="link"
+                  size="sm"
+                  className={`text-muted-foreground cursor-pointer ${index === 0 ? "pl-0" : ""}`}
+                >
+                  <a href={link.href} target="_blank">
+                    {link.label}
+                  </a>
+                </Button>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <p class="font-mono text-sm italic">Software Developer</p>
-      <p class="font-mono text-sm">30/08/2003 | Argentina, CABA</p>
+      <p class="font-mono text-sm">21 años | Argentina, CABA</p>
     </header>
 
     <Separator className="w-full my-4 bg-muted-foreground" />
@@ -96,8 +122,39 @@ const carlusImages = [
             </a>
           </h3>
           <p class="font-mono text-sm text-muted-foreground">
-            [imagen] [imagen] [imagen]
+            <ImagesGallery client:load images={logisticaImages} />
           </p>
+        </div>
+        <div class="mb-3">
+          <div class="flex flex-row gap-2 items-center">
+            <h3 class="font-mono pb-2">
+              <a
+                target="_blank"
+                href="https://filosofia-ai.vercel.app/"
+                class="hover:underline"
+              >
+                Dither Labs | Servicio de automatización de procesos
+              </a>
+            </h3>
+            <span
+              class="inline-flex items-center rounded-full border px-2.5 py-0.5 mb-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+            >
+              No lanzado aún
+            </span>
+          </div>
+          <ImagesGallery client:load images={ditherImages} />
+        </div>
+        <div class="mb-3">
+          <h3 class="font-mono pb-2">
+            <a
+              target="_blank"
+              href="https://filosofia-ai.vercel.app/"
+              class="hover:underline"
+            >
+              Filosofia Chatbot | Habla con tus autores favoritos
+            </a>
+          </h3>
+          <ImagesGallery client:load images={filosofiaImages} />
         </div>
         <div class="mb-3">
           <h3 class="font-mono pb-2">

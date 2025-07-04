@@ -9,7 +9,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "lucide-react";
 
 export default function ImagesGallery({
   images,
@@ -20,15 +25,29 @@ export default function ImagesGallery({
 
   return (
     <Dialog>
-      <DialogTrigger className="cursor-pointer hover:border-none">
-        <div className="flex flex-row gap-2 overflow-x-auto scrollbar-hide hover:border-none">
+      <DialogTrigger className="relative h-full cursor-pointer hover:border-none focus:border-none">
+        {/* <Button
+          className="absolute top-1/2 -left-10"
+          variant="ghost"
+          size="icon"
+        >
+          <ArrowLeftIcon className="size-6" />
+        </Button>
+        <Button
+          className="absolute top-1/2 -right-10"
+          variant="ghost"
+          size="icon"
+        >
+          <ArrowRightIcon className="size-6" />
+        </Button> */}
+        <div className="flex flex-row gap-2 overflow-x-auto hover:border-none snap-x snap-mandatory">
           {images.map((image, index) => (
             <img
               src={image.src.src}
               alt={image.alt}
-              width={300}
-              height={300}
-              className="rounded-md"
+              // width={300}
+              // height={300}
+              className="rounded-md snap-start object-contain w-auto h-32"
               onClick={() => setCurrentImage(index)}
             />
           ))}
