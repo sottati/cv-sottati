@@ -8,13 +8,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "./ui/button";
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "lucide-react";
 
 export default function ImagesGallery({
   images,

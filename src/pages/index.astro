@@ -57,6 +57,37 @@ const logisticaImages = [
   { src: logistica02, alt: "logistica-2" },
   { src: logistica03, alt: "logistica-3" },
 ];
+
+const projects = [
+  {
+    title: "Carlus | Herramienta de escritura de texto asistida con AI",
+    url: "https://carlus.vercel.app",
+    images: carlusImages,
+    description: undefined,
+    badge: undefined,
+  },
+  {
+    title: "Filosofia Chatbot | Habla con tus autores favoritos",
+    url: "https://filosofia-ai.vercel.app/",
+    images: filosofiaImages,
+    description: undefined,
+    badge: undefined,
+  },
+  {
+    title: "Dither Labs | Servicio de automatización de procesos",
+    url: "https://filosofia-ai.vercel.app/",
+    images: ditherImages,
+    description: undefined,
+    badge: "No lanzado aún",
+  },
+  {
+    title: "Pack Pilot | Software para manejo de empresas logisticas",
+    url: "https://logistica-lilac.vercel.app",
+    images: logisticaImages,
+    description: undefined,
+    badge: undefined,
+  },
+];
 ---
 
 <Layout>
@@ -111,63 +142,25 @@ const logisticaImages = [
 
       <section>
         <h2 class="font-mono font-bold">Proyectos</h2>
-        <div class="mb-3">
-          <h3 class="font-mono pb-2">
-            <a
-              target="_blank"
-              href="https://logistica-lilac.vercel.app"
-              class="hover:underline"
-            >
-              Pack Pilot | Software para manejo de empresas logisticas
-            </a>
-          </h3>
-          <p class="font-mono text-sm text-muted-foreground">
-            <ImagesGallery client:load images={logisticaImages} />
-          </p>
-        </div>
-        <div class="mb-3">
-          <div class="flex flex-row gap-2 items-center">
-            <h3 class="font-mono pb-2">
-              <a
-                target="_blank"
-                href="https://filosofia-ai.vercel.app/"
-                class="hover:underline"
-              >
-                Dither Labs | Servicio de automatización de procesos
-              </a>
-            </h3>
-            <span
-              class="inline-flex items-center rounded-full border px-2.5 py-0.5 mb-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
-            >
-              No lanzado aún
-            </span>
-          </div>
-          <ImagesGallery client:load images={ditherImages} />
-        </div>
-        <div class="mb-3">
-          <h3 class="font-mono pb-2">
-            <a
-              target="_blank"
-              href="https://filosofia-ai.vercel.app/"
-              class="hover:underline"
-            >
-              Filosofia Chatbot | Habla con tus autores favoritos
-            </a>
-          </h3>
-          <ImagesGallery client:load images={filosofiaImages} />
-        </div>
-        <div class="mb-3">
-          <h3 class="font-mono pb-2">
-            <a
-              target="_blank"
-              href="https://carlus.vercel.app"
-              class="hover:underline"
-            >
-              Carlus | Herramienta de escritura de texto asistida con AI
-            </a>
-          </h3>
-          <ImagesGallery client:load images={carlusImages} />
-        </div>
+        {
+          projects.map((project) => (
+            <div class="mb-3">
+              <div class="flex flex-row gap-2 items-center">
+                <h3 class="font-mono pb-2">
+                  <a target="_blank" href={project.url} class="hover:underline">
+                    {project.title}
+                  </a>
+                </h3>
+                {project.badge && (
+                  <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 mb-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                    {project.badge}
+                  </span>
+                )}
+              </div>
+              <ImagesGallery client:load images={project.images} />
+            </div>
+          ))
+        }
       </section>
 
       <section>
