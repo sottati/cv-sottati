@@ -60,31 +60,31 @@ const logisticaImages = [
 
 const projects = [
   {
-    title: "Carlus | Herramienta de escritura de texto asistida con AI",
+    title: "Carlus",
+    description: "Herramienta de escritura de texto asistida con AI",
     url: "https://carlus.vercel.app",
     images: carlusImages,
-    description: undefined,
     badge: undefined,
   },
   {
-    title: "Filosofia Chatbot | Habla con tus autores favoritos",
+    title: "Filosofia Chatbot",
+    description: "Habla con tus autores favoritos",
     url: "https://filosofia-ai.vercel.app/",
     images: filosofiaImages,
-    description: undefined,
     badge: undefined,
   },
   {
-    title: "Dither Labs | Servicio de automatización de procesos",
-    url: "https://filosofia-ai.vercel.app/",
+    title: "Dither Labs",
+    description: "Servicio de automatización de procesos",
+    url: undefined,
     images: ditherImages,
-    description: undefined,
     badge: "No lanzado aún",
   },
   {
-    title: "Pack Pilot | Software para manejo de empresas logisticas",
+    title: "Pack Pilot",
+    description: "Software para manejo de empresas logisticas",
     url: "https://logistica-lilac.vercel.app",
     images: logisticaImages,
-    description: undefined,
     badge: undefined,
   },
 ];
@@ -104,7 +104,7 @@ const projects = [
                 <Button
                   variant="link"
                   size="sm"
-                  className={`text-muted-foreground cursor-pointer ${index === 0 ? "pl-0" : ""}`}
+                  className={`text-muted-foreground cursor-pointer ${index === 0 ? "pl-0 md:pl-3" : ""}`}
                 >
                   <a href={link.href} target="_blank">
                     {link.label}
@@ -145,17 +145,24 @@ const projects = [
         {
           projects.map((project) => (
             <div class="mb-3">
-              <div class="flex flex-row gap-2 items-center">
-                <h3 class="font-mono pb-2">
-                  <a target="_blank" href={project.url} class="hover:underline">
+              <div class="flex flex-col gap-2">
+                <div class="flex flex-row gap-2 font-mono">
+                  <a
+                    target="_blank"
+                    href={project.url}
+                    class="underline md:no-underline hover:underline"
+                  >
                     {project.title}
                   </a>
-                </h3>
-                {project.badge && (
-                  <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 mb-2 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
-                    {project.badge}
-                  </span>
-                )}
+                  {project.badge && (
+                    <span class="inline-flex w-fit items-center rounded-full border px-2.5 py-0.5 my-auto text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                      {project.badge}
+                    </span>
+                  )}
+                </div>
+                <span class="font-mono text-sm mb-2">
+                  {project.description}
+                </span>
               </div>
               <ImagesGallery client:load images={project.images} />
             </div>
