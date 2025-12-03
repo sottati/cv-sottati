@@ -1,0 +1,20 @@
+---
+import { Languages } from "lucide-react";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const currentLang = Astro.currentLocale ?? "en";
+const isEnglish = currentLang === "en";
+const targetLang = isEnglish ? "es" : "en";
+const targetPath = getRelativeLocaleUrl(targetLang, ""); // Generates /es/ or /en/
+const label = isEnglish ? "Leer en Español" : "Read in English";
+---
+
+<a
+  href={targetPath}
+  class="fixed top-6 right-6 z-50 flex items-center gap-2 font-sans text-xs font-medium border border-border bg-background/80 backdrop-blur-md px-4 py-2 rounded-full hover:bg-muted/80 hover:border-foreground/20 transition-all shadow-sm group"
+>
+  <Languages className="size-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+  <span class="text-foreground/80 group-hover:text-foreground transition-colors">
+    {label}
+  </span>
+</a>

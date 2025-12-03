@@ -31,33 +31,16 @@ export default function ImagesGallery({
 
   return (
     <Dialog>
-      <DialogTrigger className="relative h-full cursor-pointer hover:border-none focus:border-none">
-        {/* <Button
-          className="absolute top-1/2 -left-10"
-          variant="ghost"
-          size="icon"
-        >
-          <ArrowLeftIcon className="size-6" />
-        </Button>
-        <Button
-          className="absolute top-1/2 -right-10"
-          variant="ghost"
-          size="icon"
-        >
-          <ArrowRightIcon className="size-6" />
-        </Button> */}
-        <div className="flex flex-row gap-2 overflow-x-auto hover:border-none snap-x snap-mandatory">
-          {images.map((image, index) => (
-            <img
-              src={image.src.src}
-              alt={image.alt}
-              // width={300}
-              // height={300}
-              className="rounded-md snap-start object-contain w-auto h-32"
-              onClick={() => setCurrentImage(index)}
+      <DialogTrigger className="w-full h-full cursor-pointer block group-hover:opacity-90 transition-opacity">
+        {images.length > 0 && (
+           <img
+              src={images[0].src.src}
+              alt={images[0].alt}
+              className="w-full h-auto object-cover aspect-video rounded-md"
+              onClick={() => setCurrentImage(0)}
             />
-          ))}
-        </div>
+        )}
+        {/* Hidden placeholders to keep logic if needed, or just rely on dialog */}
       </DialogTrigger>
       {/* <DialogContent className="flex flex-row gap-2 p-0 w-7xl h-full"> */}
       <DialogContent className="bg-background/20 w-full h-full p-0 border-none items-center justify-center rounded-none flex flex-col gap-4">
