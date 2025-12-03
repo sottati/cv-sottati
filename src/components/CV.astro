@@ -3,15 +3,18 @@ import { ArrowUpRight } from "lucide-react";
 import ImagesGallery from "@/components/images-gallery";
 
 const { content } = Astro.props;
-const { header, about, projects, work, education, stack, interests, footer } = content;
+const { header, about, projects, work, education, stack, interests, footer } =
+  content;
 ---
 
 <div class="max-w-2xl mx-auto px-6 py-12 md:py-20 font-sans">
-    
   <!-- Header -->
   <header class="mb-8 flex flex-col gap-6">
     <div class="flex flex-row gap-4 items-center">
-      <div class="size-16 rounded-full bg-muted/50 shrink-0 border border-border"></div>
+      <div
+        class="size-16 rounded-full bg-muted/50 shrink-0 border border-border"
+      >
+      </div>
       <div class="flex flex-col gap-0.5">
         <h1 class="text-2xl font-bold tracking-tight text-foreground">
           {header.name}
@@ -24,52 +27,57 @@ const { header, about, projects, work, education, stack, interests, footer } = c
   </header>
 
   <main class="flex flex-col gap-16">
-    
     <!-- About / Intro -->
     <section class="flex flex-col gap-6">
       <p class="leading-relaxed text-muted-foreground">
         {about}
       </p>
       <div class="flex gap-4 text-sm font-medium">
-        {header.links.map((link: any) => (
-          <a 
-            href={link.href} 
-            target="_blank" 
-            class="text-foreground/60 hover:text-foreground transition-colors flex items-center gap-1"
-          >
-            {link.label}
-            <ArrowUpRight className="size-3" />
-          </a>
-        ))}
+        {
+          header.links.map((link: any) => (
+            <a
+              href={link.href}
+              target="_blank"
+              class="text-foreground/60 hover:text-foreground transition-colors flex items-center gap-1"
+            >
+              {link.label}
+              <ArrowUpRight className="size-3" />
+            </a>
+          ))
+        }
       </div>
     </section>
 
     <!-- Projects -->
     <section>
-      <h2 class="text-xl font-semibold text-foreground mb-8 flex items-center gap-2">
+      <h2
+        class="text-xl font-semibold text-foreground mb-8 flex items-center gap-2"
+      >
         {projects.title}
       </h2>
       <div class="grid grid-cols-1 gap-10">
-        {projects.items.map((project: any) => (
-          <div class="group flex flex-col gap-4">
-            <div class="relative overflow-hidden rounded-lg border border-border bg-muted/20 transition-all hover:border-foreground/20">
+        {
+          projects.items.map((project: any) => (
+            <div class="group flex flex-col gap-4">
+              <div class="relative overflow-hidden rounded-lg border border-border bg-muted/20 transition-all hover:border-foreground/20">
                 <ImagesGallery client:load images={project.images} />
+              </div>
+              <div class="flex flex-col gap-2">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  class="font-medium text-foreground hover:underline decoration-1 underline-offset-4 flex items-center gap-2 w-fit"
+                >
+                  {project.title}
+                  <ArrowUpRight className="size-4 text-muted-foreground" />
+                </a>
+                <p class="text-muted-foreground text-sm">
+                  {project.description}
+                </p>
+              </div>
             </div>
-            <div class="flex flex-col gap-2">
-              <a 
-                href={project.url} 
-                target="_blank" 
-                class="font-medium text-foreground hover:underline decoration-1 underline-offset-4 flex items-center gap-2 w-fit"
-              >
-                {project.title}
-                <ArrowUpRight className="size-4 text-muted-foreground" />
-              </a>
-              <p class="text-muted-foreground text-sm">
-                {project.description}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </section>
 
@@ -77,75 +85,97 @@ const { header, about, projects, work, education, stack, interests, footer } = c
     <section>
       <h2 class="text-xl font-semibold text-foreground mb-8">{work.title}</h2>
       <div class="flex flex-col gap-8">
-        
-        {work.items.map((job: any) => (
-          <div class="flex flex-col md:flex-row md:justify-between gap-2 md:gap-10">
-            <div class="md:w-1/3">
-              <h3 class="font-medium text-foreground">{job.company}</h3>
-              <span class="text-sm text-muted-foreground block mt-1">{job.date}</span>
+        {
+          work.items.map((job: any) => (
+            <div class="flex flex-col md:flex-row md:justify-between gap-2 md:gap-10">
+              <div class="md:w-1/3">
+                <h3 class="font-medium text-foreground">{job.company}</h3>
+                <span class="text-sm text-muted-foreground block mt-1">
+                  {job.date}
+                </span>
+              </div>
+              <div class="md:w-2/3 text-sm text-muted-foreground flex flex-col gap-2 leading-relaxed">
+                <p class="text-foreground/80">{job.role}</p>
+                <ul class="list-disc list-inside space-y-1 marker:text-muted-foreground/50">
+                  {job.bullets.map((bullet: string) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div class="md:w-2/3 text-sm text-muted-foreground flex flex-col gap-2 leading-relaxed">
-              <p class="text-foreground/80">{job.role}</p>
-              <ul class="list-disc list-inside space-y-1 marker:text-muted-foreground/50">
-                {job.bullets.map((bullet: string) => (
-                  <li>{bullet}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-
+          ))
+        }
       </div>
     </section>
 
     <!-- Education -->
     <section>
-      <h2 class="text-xl font-semibold text-foreground mb-8">{education.title}</h2>
+      <h2 class="text-xl font-semibold text-foreground mb-8">
+        {education.title}
+      </h2>
       <div class="flex flex-col gap-6">
-          {education.items.map((edu: any) => (
+        {
+          education.items.map((edu: any) => (
             <div class="flex flex-col md:flex-row md:justify-between gap-2">
-            <div>
-              <h3 class="font-medium text-foreground">{edu.school}</h3>
-              <p class="text-sm text-muted-foreground">{edu.degree}</p>
+              <div>
+                <h3 class="font-medium text-foreground">{edu.school}</h3>
+                <p class="text-sm text-muted-foreground">{edu.degree}</p>
+              </div>
+              <span class="text-sm text-muted-foreground">{edu.status}</span>
             </div>
-            <span class="text-sm text-muted-foreground">{edu.status}</span>
-          </div>
-          ))}
+          ))
+        }
       </div>
     </section>
 
     <!-- Stack & Interests -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
-        <h2 class="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">{stack.title}</h2>
+        <h2
+          class="text-sm font-medium text-foreground mb-4 uppercase tracking-wider"
+        >
+          {stack.title}
+        </h2>
         <div class="flex flex-wrap gap-2 text-sm text-muted-foreground">
-          {stack.items.map((item: string, index: number) => (
-            <>
-              <span>{item}</span>
-              {index < stack.items.length - 1 && <span>·</span>}
-            </>
-          ))}
+          {
+            stack.items.map((item: string, index: number) => (
+              <>
+                <span>{item}</span>
+                {index < stack.items.length - 1 && <span>·</span>}
+              </>
+            ))
+          }
         </div>
       </div>
       <div>
-        <h2 class="text-sm font-medium text-foreground mb-4 uppercase tracking-wider">{interests.title}</h2>
-          <div class="flex flex-wrap gap-2 text-sm text-muted-foreground">
-          {interests.items.map((item: string, index: number) => (
-            <>
-              <span>{item}</span>
-              {index < interests.items.length - 1 && <span>·</span>}
-            </>
-          ))}
+        <h2
+          class="text-sm font-medium text-foreground mb-4 uppercase tracking-wider"
+        >
+          {interests.title}
+        </h2>
+        <div class="flex flex-wrap gap-2 text-sm text-muted-foreground">
+          {
+            interests.items.map((item: string, index: number) => (
+              <>
+                <span>{item}</span>
+                {index < interests.items.length - 1 && <span>·</span>}
+              </>
+            ))
+          }
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="mt-20 pt-8 border-t border-border flex justify-between text-sm text-muted-foreground">
+  <footer
+    class="mt-20 pt-8 border-t border-border flex justify-between text-sm text-muted-foreground"
+  >
     <p>&copy; {new Date().getFullYear()} Simon Ottati</p>
     <div class="flex gap-4">
-      <a href={`mailto:${header.links[2]?.href.replace('mailto:', '')}`} class="hover:text-foreground transition-colors">{footer.contact}</a>
+      <a
+        href={`mailto:${header.links[2]?.href?.replace("mailto:", "") ?? ""}`}
+        class="hover:text-foreground transition-colors">{footer.contact}</a
+      >
     </div>
   </footer>
 </div>

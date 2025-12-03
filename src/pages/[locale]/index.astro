@@ -2,7 +2,7 @@
 import CV from "@/components/CV.astro";
 import { cvData, locales } from "@/i18n/cv-content";
 import Layout from "@/layouts/Layout.astro";
-import LanguageSwitch from "@/components/LanguageSwitch.astro";
+import { SettingsDropdown } from "@/components/SettingsDropdown";
 
 export async function getStaticPaths() {
   return locales.map(locale => ({ params: { locale } }));
@@ -18,6 +18,6 @@ const { header, about } = content;
   description={about}
   lang={locale}
 >
-  <LanguageSwitch />
+  <SettingsDropdown client:load currentLocale={locale} />
   <CV content={content} />
 </Layout>

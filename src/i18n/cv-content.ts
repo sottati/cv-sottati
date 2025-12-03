@@ -14,7 +14,7 @@ import logistica02 from "@/assets/logistica/logistica-2.png";
 import logistica03 from "@/assets/logistica/logistica-3.png";
 
 export const locales = ["en", "es"] as const;
-export type Locale = typeof locales[number];
+export type Locale = (typeof locales)[number];
 
 const carlusImages = [
   { src: carlus01, alt: "carlus-1" },
@@ -43,38 +43,46 @@ export const cvData = {
   en: {
     header: {
       name: "Simon Ottati",
-      role: "Software Developer based in Argentina.",
+      role: "Software Developer. 22 y/o | Buenos Aires, Argentina",
       links: [
-        { href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/", label: "LinkedIn" },
+        {
+          href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/",
+          label: "LinkedIn",
+        },
         { href: "https://github.com/sottati", label: "GitHub" },
         { href: "mailto:simooonottati@gmail.com", label: "Email" },
       ],
     },
-    about: "Software Developer with a focus on details and user experience. I build accessible, pixel-perfect, and performant web experiences. Currently studying Information Technology Management at UADE.",
+    about:
+      "I build web experiences that feel polished and work seamlessly. Obsessed with details, performance, and making things intuitive. Third-year IT Management student at UADE.",
     projects: {
       title: "Projects",
       items: [
         {
           title: "Carlus",
-          description: "AI-assisted writing tool for enhanced productivity.",
+          description:
+            "AI writing assistant that helps you draft, refine, and polish text faster.",
           url: "https://carlus.vercel.app",
           images: carlusImages,
         },
         {
           title: "Filosofia Chatbot",
-          description: "Interactive dialogue with philosophical figures.",
+          description:
+            "Chat with AI-powered versions of your favorite philosophers and thinkers.",
           url: "https://filosofia-ai.vercel.app/",
           images: filosofiaImages,
         },
         {
           title: "Dither Labs",
-          description: "Process automation services for modern businesses.",
+          description:
+            "Automation consulting and development for businesses that want to move faster.",
           url: "https://ditherlabs.vercel.app",
           images: ditherImages,
         },
         {
           title: "Pack Pilot",
-          description: "Logistics management software for enterprise.",
+          description:
+            "Logistics management platform for tracking shipments and operations.",
           url: "https://logistica-lilac.vercel.app",
           images: logisticaImages,
         },
@@ -89,9 +97,9 @@ export const cvData = {
           date: "Mar 2022 — Present",
           description: "Web Developer.",
           bullets: [
-            "Designed and developed a P2P crypto exchange platform focused on local markets.",
-            "Created and maintained the official website for Fundación Blockchain Argentina.",
-            "Structured information architecture for better user engagement.",
+            "Built a P2P crypto exchange platform for local Argentine markets.",
+            "Designed and developed the official site for Fundación Blockchain Argentina.",
+            "Restructured site architecture, improving navigation and content discoverability.",
           ],
         },
         {
@@ -100,8 +108,8 @@ export const cvData = {
           date: "Apr 2023 — Present",
           description: "Event Production for La Nacion+.",
           bullets: [
-            "Managed live broadcasts and technical operations (vMix).",
-            "Coordinated large-scale corporate events and summits.",
+            "Operated live broadcasts for La Nacion+ events using vMix (switcher/streaming).",
+            "Managed technical production for corporate summits and conferences.",
           ],
         },
         {
@@ -110,9 +118,9 @@ export const cvData = {
           date: "Ongoing",
           description: "Creative & Dev Services.",
           bullets: [
-            "Video editing (Premiere Pro, After Effects).",
-            "Graphic design for events and branding.",
-            "Web development and process automation.",
+            "Video editing and motion graphics (Premiere, After Effects, Photoshop).",
+            "Brand design for events: flyers, invitations, and promotional materials.",
+            "Web development and workflow automation for small businesses.",
           ],
         },
       ],
@@ -138,7 +146,16 @@ export const cvData = {
     },
     interests: {
       title: "Interests",
-      items: ["Surf", "Football", "Snowboard", "AI", "SpeedCubing"],
+      items: [
+        "Surf",
+        "Football",
+        "Programming",
+        "Physical Exercise",
+        "Snowboard",
+        "AI",
+        "Speed Cubing",
+        "Product Design",
+      ],
     },
     footer: {
       contact: "Contact",
@@ -147,38 +164,46 @@ export const cvData = {
   es: {
     header: {
       name: "Simon Ottati",
-      role: "Software Developer. 22 años | Argentina, CABA",
+      role: "Software Developer. 22 años | Buenos Aires, Argentina",
       links: [
-        { href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/", label: "LinkedIn" },
+        {
+          href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/",
+          label: "LinkedIn",
+        },
         { href: "https://github.com/sottati", label: "GitHub" },
         { href: "mailto:simooonottati@gmail.com", label: "Gmail" },
       ],
     },
-    about: "Desarrollador de Software enfocado en los detalles y la experiencia de usuario. Creo experiencias web accesibles y de alto rendimiento. Estudiante de Gestión de Tecnologías de la Información en UADE.",
+    about:
+      "Desarrollo experiencias web que se sienten pulidas y funcionan sin fricciones. Obsesionado con los detalles, performance, y hacer las cosas intuitivas. Cursando 3er año de Lic. en Gestión de TI en UADE.",
     projects: {
       title: "Proyectos",
       items: [
         {
           title: "Carlus",
-          description: "Herramienta de escritura de texto asistida con AI",
+          description:
+            "Asistente de escritura con AI para redactar, refinar y pulir textos más rápido.",
           url: "https://carlus.vercel.app",
           images: carlusImages,
         },
         {
           title: "Filosofia Chatbot",
-          description: "Habla con tus autores favoritos",
+          description:
+            "Chatea con versiones AI de tus filósofos y pensadores favoritos.",
           url: "https://filosofia-ai.vercel.app/",
           images: filosofiaImages,
         },
         {
           title: "Dither Labs",
-          description: "Servicio de automatización de procesos",
+          description:
+            "Consultoría y desarrollo de automatización para empresas que quieren moverse más rápido.",
           url: "https://ditherlabs.vercel.app",
           images: ditherImages,
         },
         {
           title: "Pack Pilot",
-          description: "Software para manejo de empresas logisticas",
+          description:
+            "Plataforma de gestión logística para trackear envíos y operaciones.",
           url: "https://logistica-lilac.vercel.app",
           images: logisticaImages,
         },
@@ -190,23 +215,22 @@ export const cvData = {
         {
           company: "PlanBit / Fundación Blockchain",
           role: "Desarrollador Web",
-          date: "Marzo 2022 -> Presente",
+          date: "Marzo 2022 → Presente",
           description: "Desarrollador Web.",
           bullets: [
-            "Diseño, maquetación y desarrollo web.",
-            "Creación de un exchange P2P de criptomonedas, apuntado para gente de Buenos Aires.",
-            "Fundación Blockchain: diseño y creación de la web (fundacionblockchain.com).",
-            "Organización y segmentación del contenido informativo dentro de la página.",
+            "Desarrollé una plataforma P2P de intercambio crypto para el mercado argentino.",
+            "Diseñé y desarrollé el sitio oficial de Fundación Blockchain Argentina.",
+            "Reestructuré la arquitectura del sitio, mejorando navegación y descubrimiento de contenido.",
           ],
         },
         {
           company: "PromoWear",
           role: "Producción de eventos",
-          date: "Abril 2023 -> Presente",
+          date: "Abril 2023 → Presente",
           description: "Producción de eventos para La Nacion+.",
           bullets: [
-            "Eventos y programas en vivo: Comunidad de Negocios, Managment 2030 10° Edición, Summits.",
-            "Operador técnico en transmisiones en vivo (VMix).",
+            "Operé transmisiones en vivo para eventos de La Nacion+ usando vMix (switcher/streaming).",
+            "Manejé producción técnica para summits y conferencias corporativas.",
           ],
         },
         {
@@ -215,10 +239,9 @@ export const cvData = {
           date: "En curso",
           description: "Freelance.",
           bullets: [
-            "Edición de contenidos audiovisuales | Premiere Pro, Photoshop, Illustrator, After Effects.",
-            "Diseñador de flyers para eventos, invitaciones, tarjetas de contacto.",
-            "Desarrollo de paginas web.",
-            "Automatización de procesos.",
+            "Edición de video y motion graphics (Premiere, After Effects, Photoshop).",
+            "Diseño de marca para eventos: flyers, invitaciones, y materiales promocionales.",
+            "Desarrollo web y automatización de workflows para pequeños negocios.",
           ],
         },
       ],
@@ -229,12 +252,13 @@ export const cvData = {
         {
           school: "UADE",
           degree: "Lic. en Gestión de Tecnologías de la Información (Sistemas)",
-          status: "En curso | 3er año",
+          status: "En curso - 3er año",
         },
         {
           school: "ORT Belgrano",
-          degree: "Bachiller con orientación en producción de medios audiovisuales",
-          status: "Graduado",
+          degree:
+            "Bachiller con orientación en producción de medios audiovisuales",
+          status: "2017 - 2021",
         },
       ],
     },
@@ -244,7 +268,16 @@ export const cvData = {
     },
     interests: {
       title: "Intereses generales",
-      items: ["Surf", "Futbol", "Programación", "Ejercicio fisico", "Snowboard", "AI", "SpeedCubing"],
+      items: [
+        "Surf",
+        "Futbol",
+        "Programación",
+        "Ejercicio fisico",
+        "Snowboard",
+        "AI",
+        "Speed Cubing",
+        "Product Design",
+      ],
     },
     footer: {
       contact: "Contacto",
