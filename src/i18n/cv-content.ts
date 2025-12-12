@@ -62,7 +62,7 @@ export const cvData = {
           title: "Dither Labs",
           description:
             "Automation consulting and development for businesses that want to move faster.",
-          url: "https://ditherlabs.vercel.app",
+          url: "https://ditherlabs-astro.vercel.app",
           images: ditherImages,
         },
         {
@@ -183,7 +183,7 @@ export const cvData = {
           title: "Dither Labs",
           description:
             "Consultoría y desarrollo de automatización para empresas que quieren moverse más rápido.",
-          url: "https://ditherlabs.vercel.app",
+          url: "https://ditherlabs-astro.vercel.app",
           images: ditherImages,
         },
         {
