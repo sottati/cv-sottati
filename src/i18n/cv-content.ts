@@ -43,7 +43,7 @@ export const cvData = {
   en: {
     header: {
       name: "Simon Ottati",
-      role: "Software Developer. 22 y/o | Buenos Aires, Argentina",
+      role: "Software Developer. 22 y/o. Buenos Aires, Argentina",
       links: [
         {
           href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/",
@@ -54,10 +54,17 @@ export const cvData = {
       ],
     },
     about:
-      "I build web experiences that feel polished and work seamlessly. Obsessed with details, performance, and making things intuitive. Third-year IT Management student at UADE.",
+      "I build software that solves and attacks real needs. Obsessed with details, performance, and making things intuitive. Third-year IT Management student at UADE.",
     projects: {
       title: "Projects",
       items: [
+        {
+          title: "Dither Labs",
+          description:
+            "Automation consulting and development for businesses that want to move faster.",
+          url: "https://ditherlabs.vercel.app",
+          images: ditherImages,
+        },
         {
           title: "Carlus",
           description:
@@ -71,13 +78,6 @@ export const cvData = {
             "Chat with AI-powered versions of your favorite philosophers and thinkers.",
           url: "https://filosofia-ai.vercel.app/",
           images: filosofiaImages,
-        },
-        {
-          title: "Dither Labs",
-          description:
-            "Automation consulting and development for businesses that want to move faster.",
-          url: "https://ditherlabs.vercel.app",
-          images: ditherImages,
         },
         {
           title: "Pack Pilot",
@@ -164,7 +164,7 @@ export const cvData = {
   es: {
     header: {
       name: "Simon Ottati",
-      role: "Software Developer. 22 años | Buenos Aires, Argentina",
+      role: "Software Developer. 22 años. Buenos Aires, Argentina",
       links: [
         {
           href: "https://www.linkedin.com/in/simon-ottati-ostiglia-6b161620a/",
@@ -175,10 +175,17 @@ export const cvData = {
       ],
     },
     about:
-      "Desarrollo experiencias web que se sienten pulidas y funcionan sin fricciones. Obsesionado con los detalles, performance, y hacer las cosas intuitivas. Cursando 3er año de Lic. en Gestión de TI en UADE.",
+      "Desarrollo software que soluciona y ataca necesidades reales. Obsesionado con los detalles, performance, y hacer las cosas intuitivas. Cursando 3er año de Lic. en Gestión de TI en UADE.",
     projects: {
       title: "Proyectos",
       items: [
+        {
+          title: "Dither Labs",
+          description:
+            "Consultoría y desarrollo de automatización para empresas que quieren moverse más rápido.",
+          url: "https://ditherlabs.vercel.app",
+          images: ditherImages,
+        },
         {
           title: "Carlus",
           description:
@@ -192,13 +199,6 @@ export const cvData = {
             "Chatea con versiones AI de tus filósofos y pensadores favoritos.",
           url: "https://filosofia-ai.vercel.app/",
           images: filosofiaImages,
-        },
-        {
-          title: "Dither Labs",
-          description:
-            "Consultoría y desarrollo de automatización para empresas que quieren moverse más rápido.",
-          url: "https://ditherlabs.vercel.app",
-          images: ditherImages,
         },
         {
           title: "Pack Pilot",
