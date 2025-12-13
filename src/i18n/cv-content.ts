@@ -5,7 +5,7 @@ import filosofia01 from "@/assets/filosofia/filosofia-1.png";
 import filosofia02 from "@/assets/filosofia/filosofia-2.png";
 import filosofia03 from "@/assets/filosofia/filosofia-3.png";
 
-import dither01 from "@/assets/ditherlabs/ditherlabs-1.png";
+import dither01 from "@/assets/ditherlabs/ditherlabs-landing.png";
 import dither02 from "@/assets/ditherlabs/ditherlabs-2.png";
 import dither03 from "@/assets/ditherlabs/ditherlabs-3.png";
 
