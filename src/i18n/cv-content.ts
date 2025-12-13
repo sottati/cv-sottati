@@ -5,9 +5,9 @@ import filosofia01 from "@/assets/filosofia/filosofia-1.png";
 import filosofia02 from "@/assets/filosofia/filosofia-2.png";
 import filosofia03 from "@/assets/filosofia/filosofia-3.png";
 
-import dither01 from "@/assets/ditherlabs/ditherlabs-landing.png";
-import dither02 from "@/assets/ditherlabs/ditherlabs-2.png";
-import dither03 from "@/assets/ditherlabs/ditherlabs-3.png";
+import dither01 from "@/assets/ditherlabs/ditherlabs-light.png";
+import dither02 from "@/assets/ditherlabs/ditherlabs-dark.png";
+import dither03 from "@/assets/ditherlabs/ditherlabs-soluciones.png";
 
 import logistica01 from "@/assets/logistica/logistica-1.png";
 import logistica02 from "@/assets/logistica/logistica-2.png";
@@ -142,7 +142,7 @@ export const cvData = {
     },
     stack: {
       title: "Stack",
-      items: ["React", "Next.js", "Astro", "Tailwind", "SQL", "Python", "Java"],
+      items: ["TypeScript", "SQL", "Python"],
     },
     interests: {
       title: "Interests",
@@ -175,7 +175,7 @@ export const cvData = {
       ],
     },
     about:
-      "Desarrollo software que soluciona y ataca necesidades reales. Obsesionado con los detalles, performance, y hacer las cosas intuitivas. Cursando 3er año de Lic. en Gestión de TI en UADE.",
+      "Desarrollo software que soluciona y ataca necesidades reales. Obsesionado con los detalles, performance, y hacer las cosas intuitivas. Cursando 3er año de Lic. en Gestión de Tecnologías de la Información en UADE.",
     projects: {
       title: "Proyectos",
       items: [
@@ -264,7 +264,7 @@ export const cvData = {
     },
     stack: {
       title: "Conocimientos",
-      items: ["React", "NextJS", "Astro", "SQL", "Python", "Java"],
+      items: ["TypeScript", "SQL", "Python"],
     },
     interests: {
       title: "Intereses generales",

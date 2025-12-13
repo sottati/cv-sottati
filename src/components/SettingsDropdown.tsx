@@ -26,7 +26,9 @@ export function SettingsDropdown({ currentLocale }: SettingsDropdownProps) {
   // Toggle theme
   const toggleTheme = (newTheme: "light" | "dark") => {
     setTheme(newTheme);
-    document.documentElement.classList[newTheme === "dark" ? "add" : "remove"]("dark");
+    document.documentElement.classList[newTheme === "dark" ? "add" : "remove"](
+      "dark"
+    );
   };
 
   // Obtener URL para cambio de idioma

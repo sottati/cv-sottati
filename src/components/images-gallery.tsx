@@ -33,32 +33,32 @@ export default function ImagesGallery({
     <Dialog>
       <DialogTrigger className="w-full h-full cursor-pointer block group-hover:opacity-90 transition-opacity">
         {images.length > 0 && (
-           <img
-              src={images[0].src.src}
-              alt={images[0].alt}
-              className="w-full h-auto object-cover aspect-video rounded-md"
-              onClick={() => setCurrentImage(0)}
-            />
+          <img
+            src={images[0].src.src}
+            alt={images[0].alt}
+            className="w-full h-auto object-cover aspect-video rounded-md"
+            onClick={() => setCurrentImage(0)}
+          />
         )}
-        {/* Hidden placeholders to keep logic if needed, or just rely on dialog */}
       </DialogTrigger>
-      {/* <DialogContent className="flex flex-row gap-2 p-0 w-7xl h-full"> */}
       <DialogContent className="bg-background/20 w-full h-full p-0 border-none items-center justify-center rounded-none flex flex-col gap-4">
-        <img
-          src={images[currentImage].src.src}
-          alt={images[currentImage].alt}
-          width={1000}
-          height={1000}
-          className="relative w-full max-w-full h-auto max-h-[60vh] md:max-w-[90vw] md:max-h-[80vh] p-2 md:p-12 object-contain rounded-lg"
-        />
+        <div className="relative w-full max-w-full max-h-[85vh] md:max-w-[90vw] md:max-h-[90vh] p-4 md:p-12 overflow-hidden rounded-xl flex items-center justify-center">
+          <img
+            src={images[currentImage].src.src}
+            alt={images[currentImage].alt}
+            width={1000}
+            height={1000}
+            className="max-w-full max-h-full w-auto h-auto object-contain rounded-2xl"
+          />
+        </div>
         {images.length > 1 && (
-          <div className="w-full flex justify-center mt-2 md:mt-0">
-            <div className="flex gap-1 bg-black/50 backdrop-blur-sm rounded-lg p-1.5 max-w-full md:max-w-[90vw] overflow-x-auto">
+          <div className="w-full flex justify-center">
+            <div className="flex gap-1 bg-black/50 backdrop-blur-sm rounded-lg p-1 max-w-full md:max-w-[90vw] overflow-x-auto">
               {images.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImage(index)}
-                  className={`w-14 h-10 md:w-10 md:h-6 rounded overflow-hidden border-2 transition-all flex-shrink-0 ${
+                  className={`aspect-video h-10 rounded overflow-hidden border-2 transition-all flex-shrink-0 ${
                     index === currentImage
                       ? "border-white"
                       : "border-transparent hover:border-white/50"
