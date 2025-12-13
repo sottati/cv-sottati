@@ -13,6 +13,10 @@ export default defineConfig({
 
   integrations: [react()],
 
+  redirects: {
+    '/': '/en'
+  },
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],
