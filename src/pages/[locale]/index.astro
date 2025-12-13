@@ -1,0 +1,23 @@
+---
+import CV from "@/components/CV.astro";
+import { cvData, locales } from "@/i18n/cv-content";
+import Layout from "@/layouts/Layout.astro";
+import { SettingsDropdown } from "@/components/SettingsDropdown";
+
+export async function getStaticPaths() {
+  return locales.map(locale => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const content = cvData[locale as keyof typeof cvData];
+const { header, about } = content;
+---
+
+<Layout
+  title={`${header.name} - ${header.role.split('.')[0]}`}
+  description={about}
+  lang={locale}
+>
+  <SettingsDropdown client:load currentLocale={locale} />
+  <CV content={content} />
+</Layout>
