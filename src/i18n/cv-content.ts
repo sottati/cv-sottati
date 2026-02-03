@@ -62,7 +62,7 @@ export const cvData = {
           title: "Dither Labs",
           description:
             "Automation consulting and development for businesses that want to move faster.",
-          url: "https://ditherlabs-astro.vercel.app",
+          url: "https://ditherlabs.dev",
           images: ditherImages,
         },
         {
@@ -71,13 +71,6 @@ export const cvData = {
             "AI writing assistant that helps you draft, refine, and polish text faster.",
           url: "https://carlus.vercel.app",
           images: carlusImages,
-        },
-        {
-          title: "Filosofia Chatbot",
-          description:
-            "Chat with AI-powered versions of your favorite philosophers and thinkers.",
-          url: "https://filosofia-ai.vercel.app/",
-          images: filosofiaImages,
         },
         {
           title: "Pack Pilot",
@@ -91,6 +84,16 @@ export const cvData = {
     work: {
       title: "Work",
       items: [
+        {
+          company: "Dither Labs",
+          role: "Founder",
+          date: "Oct 2025 — Present",
+          description: "Founder",
+          bullets: [
+            "Custom software development tailored to client needs.",
+            "Business process automation.",
+          ],
+        },
         {
           company: "PlanBit / Fundación Blockchain",
           role: "Web Developer",
@@ -183,7 +186,7 @@ export const cvData = {
           title: "Dither Labs",
           description:
             "Consultoría y desarrollo de automatización para empresas que quieren moverse más rápido.",
-          url: "https://ditherlabs-astro.vercel.app",
+          url: "https://ditherlabs.dev",
           images: ditherImages,
         },
         {
@@ -192,13 +195,6 @@ export const cvData = {
             "Asistente de escritura con AI para redactar, refinar y pulir textos más rápido.",
           url: "https://carlus.vercel.app",
           images: carlusImages,
-        },
-        {
-          title: "Filosofia Chatbot",
-          description:
-            "Chatea con versiones AI de tus filósofos y pensadores favoritos.",
-          url: "https://filosofia-ai.vercel.app/",
-          images: filosofiaImages,
         },
         {
           title: "Pack Pilot",
@@ -212,6 +208,16 @@ export const cvData = {
     work: {
       title: "Experiencia laboral",
       items: [
+        {
+          company: "Dither Labs",
+          role: "Fundador",
+          date: "Octubre 2025 → Presente",
+          description: "Fundador",
+          bullets: [
+            "Creación de software a medida.",
+            "Automatizaciones de procesos de negocio.",
+          ],
+        },
         {
           company: "PlanBit / Fundación Blockchain",
           role: "Desarrollador Web",
